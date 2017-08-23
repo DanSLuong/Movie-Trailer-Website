@@ -38,16 +38,19 @@ main_page_head = '''
             margin-bottom: 20px;
             padding-top: 20px;
         }
-        .movie-tile:hover{
+        .movie-tile:hover {
             background-color: #EEE;
             cursor: pointer;
         }
-        .movie-tile:hover .movie-info{
+        .movie-tile:hover .movie-info {
             width: 100%;
             display: inline;
         }
         .movie-info {
             display: none;
+        }
+        .trailer_link:hover {
+            color: red;
         }
         .scale-media {
             padding-bottom: 56.25%;
@@ -71,8 +74,8 @@ main_page_head = '''
             $("#trailer-video-container").empty();
         });
         // Start playing the video whenever the trailer modal is opened
-        $(document).on('click', '.movie-tile', function (event) {
-            var trailerYouTubeId = $(this).attr('data-trailer-youtube-id')
+        $(document).on('click', '.poster_image, .trailer_link', function (event) {
+            var trailerYouTubeId = $('.movie-tile').attr('data-trailer-youtube-id')
             var sourceUrl = 'http://www.youtube.com/embed/' + trailerYouTubeId + '?autoplay=1&html5=1';
             $("#trailer-video-container").empty().append($("<iframe></iframe>", {
               'id': 'trailer-video',
@@ -129,12 +132,14 @@ main_page_content = '''
 # A single movie entry html template
 movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
-    <img src="{poster_image_url}" width="220" height="342">
+    <img class="poster_image" src="{poster_image_url}" width="220" height="342">
     <h2>{movie_title}</h2>
     <div class="col-md-6 col-lg-4 movie-info text-left">
         <h6>Release Date: {release_date}</h6>
         <h6>Duration: {duration}</h6>
         <h4 id="storyline">{storyline}</h4>
+        <h5>movie trailer: </h5>
+        <h5 class="trailer_link">https://www.youtube.com/watch?v={trailer_youtube_id}</h5>
     </div>
 </div>
 '''
