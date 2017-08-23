@@ -13,9 +13,11 @@ main_page_head = '''
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Baloo+Bhaijaan" rel="stylesheet">
     <style type="text/css" media="screen">
         body {
             padding-top: 80px;
+            font-family: 'Baloo Bhaijaan', cursive;
         }
         #trailer .modal-dialog {
             margin-top: 200px;
@@ -36,9 +38,16 @@ main_page_head = '''
             margin-bottom: 20px;
             padding-top: 20px;
         }
-        .movie-tile:hover {
+        .movie-tile:hover{
             background-color: #EEE;
             cursor: pointer;
+        }
+        .movie-tile:hover .movie-info{
+            width: 100%;
+            display: inline;
+        }
+        .movie-info {
+            display: none;
         }
         .scale-media {
             padding-bottom: 56.25%;
@@ -122,6 +131,11 @@ movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h2>{movie_title}</h2>
+    <div class="col-md-6 col-lg-4 movie-info text-left">
+        <h6>Release Date: {release_date}</h6>
+        <h6>Duration: {duration}</h6>
+        <h4 id="storyline">{storyline}</h4>
+    </div>
 </div>
 '''
 
@@ -142,7 +156,10 @@ def create_movie_tiles_content(movies):
         content += movie_tile_content.format(
             movie_title=movie.title,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            storyline=movie.storyLine,
+            duration=movie.duration,
+            release_date=movie.release_date
         )
     return content
 

@@ -12,11 +12,13 @@ class Video():
     """Here we define the instance variables of the Parent class Video"""
 
     def __init__(self, title, storyLine,
-                 poster_image_url, trailer_youtube_url):
+                 poster_image_url, trailer_youtube_url, duration, release_date):
         self.title = title
         self.storyLine = storyLine
         self.poster_image_url = poster_image_url
         self.trailer_youtube_url = trailer_youtube_url
+        self.duration = duration
+        self.release_date = release_date
 
     def showMovieTrailer(self):
         webbrowser.open(self.trailer_youtube_url)
@@ -29,7 +31,7 @@ class Movie(Video):
     """Below is the definition of the Child class Movie"""
 
     def __init__(self, title, storyLine,
-                 poster_image_url, trailer_youtube_url):
+                 poster_image_url, trailer_youtube_url, duration, release_date):
         """Here we call the Parent class Video to utilize in Movie"""
         Video.__init__(self, title, storyLine,
-                       poster_image_url, trailer_youtube_url)
+                       poster_image_url, trailer_youtube_url, duration, release_date)
