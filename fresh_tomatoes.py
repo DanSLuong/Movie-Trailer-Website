@@ -42,6 +42,7 @@ main_page_head = '''
             background-color: #EEE;
             cursor: pointer;
         }
+        /*hides .movie-info data until mouse hover*/
         .movie-tile:hover .movie-info {
             width: 100%;
             display: inline;
@@ -134,6 +135,7 @@ movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img class="poster_image" src="{poster_image_url}" width="220" height="342">
     <h2>{movie_title}</h2>
+    <!--More in-depth info about the movies-->
     <div class="col-md-6 col-lg-4 movie-info text-left">
         <h6>Release Date: {release_date}</h6>
         <h6>Duration: {duration}</h6>

@@ -1,7 +1,7 @@
 import media
 import fresh_tomatoes
 
-
+'''Create Object of each movie'''
 kizumonogatariP1 = media.Movie(
     "Kizumonogatari Part 1",
     "The first part in a three part movie about Araragi's encounter with "
