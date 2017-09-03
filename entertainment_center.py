@@ -1,7 +1,9 @@
 import media
 import fresh_tomatoes
 
-'''Create Object of each movie'''
+# Create Object of each movie
+''' Kizumonogatari movie: movie title, storyline, poster image, movie trailer,
+    movie duration, and release date'''
 kizumonogatariP1 = media.Movie(
     "Kizumonogatari Part 1",
     "The first part in a three part movie about Araragi's encounter with "
@@ -14,6 +16,8 @@ kizumonogatariP1 = media.Movie(
     "1hr 4mins",
     "Janurary 8, 2016")
 
+''' Your Name movie: movie title, storyline, poster image, movie trailer,
+    movie duration, and release date'''
 yourName = media.Movie(
     "Your Name",
     "Two strangers find themselves linked in a bizarre way. When a connection "
@@ -23,6 +27,8 @@ yourName = media.Movie(
     "1hr 46mins",
     "April 7, 2017")
 
+''' Wonder Woman movie: movie title, storyline, poster image, movie trailer,
+    movie duration, and release date'''
 wonderWoman = media.Movie(
     "Wonder Woman",
     "Before she was Wonder Woman, she was Diana, princess of the Amazons, "
@@ -35,6 +41,8 @@ wonderWoman = media.Movie(
     "2hrs 22mins",
     "June 2, 2017")
 
+''' Interstellar movie: movie title, storyline, poster image, movie trailer,
+    movie duration, and release date'''
 interstellar = media.Movie(
     "Interstellar",
     "A team of explorers travel through a wormhole in space in an attempt to "
@@ -45,6 +53,8 @@ interstellar = media.Movie(
     "2hrs 49mins",
     "November 7, 2014")
 
+''' The Shaw Shank Redemption movie: movie title, storyline, poster image,
+    movie trailer, movie duration, and release date'''
 shaw = media.Movie(
     "The Shawshank Redemption",
     "Two imprisoned men bond over a number of years, finding solace and eventu"
@@ -56,6 +66,8 @@ shaw = media.Movie(
     "2hrs 22mins",
     "October 14, 1994")
 
+''' Toy Story 3 movie: movie title, storyline, poster image, movie trailer,
+    movie duration, and release date'''
 tS3 = media.Movie(
     "Toy Story 3",
     "Part three of a story of a boy and his toys that come to life",
@@ -65,6 +77,8 @@ tS3 = media.Movie(
     "1hr 43mins",
     "June 18, 2010")
 
+# Create a list with the movies that will be used by the media.py file
 movies = [kizumonogatariP1, yourName, wonderWoman, interstellar, shaw, tS3]
 
+# Opens the HTML file in a webbrowser using the fresh_tomatoes.py file
 fresh_tomatoes.open_movies_page(movies)
